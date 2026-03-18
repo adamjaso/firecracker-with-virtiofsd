@@ -16,6 +16,7 @@ tracing = ["log-instrument", "utils/tracing"]
 
 [dependencies]
 libc = "0.2.184"
+landlock = "0.4"
 log-instrument = { path = "../log-instrument", optional = true }
 regex = { version = "1.12.3", default-features = false, features = ["std"] }
 thiserror = "2.0.18"
