@@ -415,6 +415,9 @@ impl Vmm {
                         memory_hotplug = Some(MemoryHotplugConfig::from(m));
                     }
                 }
+                // Generic vhost-user devices are not included in the instance info
+                // as their configuration is not tracked in VmResources.
+                VirtioDeviceType::VhostUserGeneric => {}
             });
 
         let mmds_config = mmds_ref.map(|mmds| {
